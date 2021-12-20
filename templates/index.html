@@ -1,0 +1,166 @@
+
+    {% extends 'base.html' %}
+    {% block title %}
+        Home
+    {% endblock title %}
+    {% block body %}
+        
+    
+    <!--div class="container">
+        <h1>Add A ToDo</h1>
+        <form action="/" method="POST">
+            <div class="mb-3">
+              <label for="title" class="form-label">Todo Title</label>
+              <input type="text"  name="title" class="form-control" id="title" aria-describedby="emailHelp">
+              
+            </div>
+            <div class="mb-3">
+              <label for="desc" class="form-label">Todo Description</label>
+              <input type="text" class="form-control" name="desc" id="desc">
+            </div>
+           
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </form>
+    </div>
+    <div class="container my-5">
+        <h2>YOUR TODO</h2>
+        
+                {% if alltodo|length ==0 %}
+                 
+                <div class="alert alert-secondary" role="alert">
+                    No recods found!! 
+                  </div>  
+                    
+                {% else %}
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Action</th>
+        
+                      </tr>
+                    </thead>
+                    <tbody>   
+                {% endif %}
+                
+                {% for todo in alltodo %}
+
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.desc}}</td>
+                    <td>{{todo.date_created}}</td>
+                    <td><a href="/delete/{{todo.sno}}" type="button" class="btn btn-outline-secondary">Delete</a>
+                    <a href="/update/{{todo.sno}}" type="button" class="btn btn-outline-secondary">Update</a></td>
+                  </tr>
+                    
+                {% endfor %}
+              
+             
+            </tbody>
+          </table>
+    </div>
+    -->
+    <div class="container">
+      <h1></h1>
+      <div class="form-group">
+        <form action="/" method="POST" class="form-group">
+            <div class="mb-3 mx-5">
+
+              <img class="mx-5" type="image" src="../static/toppng.com-google-vector-logo-old-800x800.png" name="GOOGL" width="200" height="200" />  
+              
+              <img type="image" src="../static/8bar-legal-mobile.svg" name="IBM" width="200" height="200" />
+              
+              <img type="image" src="../static/1634309472523.jpeg" name="HP" width="250" height="250" />
+
+              <img type="image" src="../static/cbs-logo-vector-1.svg" name="CAT" width="200" height="250" />
+                
+              
+            </div>
+
+            <div class="dropdown"  >
+              <label for="company"><h4>Choose a company: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </h4></label>
+              <select id="company" name="company"  class="form-control">
+                <option value="GOOGL">GOOGLE</option>
+                <option value="IBM">IBM</option>
+                <option value="HP">HP</option>
+                <option value="CBS">CBS</option>
+                <option value="CAT">CAT</option>
+                <option value="EBAY">EBAY</option>
+                <option value="AAPL">APPLE</option>
+                <option value="AMZN">AMAZON</option>
+                <option value="MSFT">MICROSOFT</option>
+                
+                <option value="FB">FACEBOOK</option>
+              </select>
+              <br>
+
+              <div class="dropdown"  >
+                <label for="model"><h4>Select Model :</h4></label>
+                <select id="model" name="model" class="form-control">
+                  <option value="Linear">Linear Regression</option>
+                  <option value="LSTM">Long short-term memory(LSTM)</option>
+                  
+                </select>
+                <br>
+               
+                
+
+                  <label for="quantity"><h4>Select Feature :  </h4></label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Open" id="defaultCheck1"  checked="true" disabled>
+                    <label class="form-check-label" for="defaultCheck1">
+                      Open
+                    </label>
+                  </div>
+                <input type="checkbox"  class="form-check-input" value="High" class="danger" name='feature_checkbox'>
+                <label class="form-check-label" for="flexCheckDefault">
+                  High
+                </label>
+                <input type="checkbox" class="form-check-input" value="Low" class="danger" name='feature_checkbox'>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Low
+                </label>
+                <input type="checkbox" class="form-check-input" value="Volume" class="danger" name='feature_checkbox'>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Volume
+                </label>
+                
+                
+                </div>
+                <div>
+                  <label for="quantity"><h4> Time Steps :</h4></label>
+                  <input type="number" id="quantity" value="30" name="Length" min="1" max="50">Days
+                </div>
+                
+              
+              <button  type="submit" class="btn btn-dark" >Submit</button>
+            </div>
+            
+            
+           
+            
+          </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    {% endblock body %}
+</body>
+
+</html>
